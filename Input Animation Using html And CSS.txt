@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		:root {
+			--bg: #29272b;
+			--white: #bebebe;
+			--primary: #32ce9a;
+			--placeholder: #6a666c;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			height: 100vh;
+			height: 100svh;
+			display: grid;
+			place-items: center;
+			background-color: var(--bg);
+		}
+		.wrapper {
+			width: min(325px, 80vw);
+			display: grid;
+			align-items: center;
+		}
+		.wrapper > * {
+			grid-column: 1;
+			grid-row: 1;
+			font: 1.1rem future, helvetica, sans-serif;
+			color: var(--white);
+		}
+		.wrapper input {
+			position: relative;
+			border: 1.5px solid var(--white);
+			border-radius: 0.25rem;
+			outline: none;
+			background-color: transparent;
+			color: var(--white);
+			padding: 1rem;
+			z-index: 0;
+			transition: border-color 0.5s;
+		}
+		.wrapper input:focus {
+			border-color: var(--primary);
+		}
+		.wrapper input:focus ~ span, .wrapper input:not(:placeholder-shown) ~ span {
+			transform: translateY(-1.8rem) scale(0.75);
+			padding: 0 0.25rem;
+			color: var(--white);
+		}
+		.wrapper span {
+		    width: max-content;
+			background-color: var(--bg);
+			margin-left: 1rem;
+			color: var(--placeholder);
+			transition: transform 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<main class="wrapper">
+		<input type="text" placeholder="">
+		<span>Enter your email</span>
+	</main>
+</body>
+</html>
